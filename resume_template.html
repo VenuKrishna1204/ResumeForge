@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }}'s Resume</title>
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+</head>
+<body class="resume-page">
+    <div class="resume-container">
+        <div class="sidebar">
+            <header class="resume-header">
+                <h1>{{ name }}</h1>
+            </header>
+
+            <section class="section contact-info">
+                <h3>Contact</h3>
+                <p>Email: <a href="mailto:{{ email }}">{{ email }}</a></p>
+                <p>Phone: {{ phone }}</p>
+                {% if linkedin %}
+                    <p>LinkedIn: <a href="{{ linkedin }}">{{ linkedin }}</a></p>
+                {% endif %}
+                {% if github %}
+                    <p>GitHub: <a href="{{ github }}">{{ github }}</a></p>
+                {% endif %}
+            </section>
+
+            {% if skills %}
+                <section class="section skills-section">
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        {% for skill in skills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+
+            {% if languages %}
+                <section class="section languages-section">
+                    <h3>Languages</h3>
+                    <ul class="skills-list">
+                        {% for lang in languages %}
+                            <li>{{ lang }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+            
+            {% if education %}
+                <section class="section education-section">
+                    <h3>Education</h3>
+                    {% for edu in education %}
+                        <div class="item">
+                            <h4>{{ edu.degree }}</h4>
+                            <p>{{ edu.college }}</p>
+                            <p>{{ edu.year }}</p>
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+        </div>
+
+        <main class="main-content">
+            {% if about %}
+                <section class="resume-section summary-section">
+                    <h3>Professional Summary</h3>
+                    <p>{{ about }}</p>
+                </section>
+            {% endif %}
+
+            {% if experience %}
+                <section class="resume-section experience-section">
+                    <h3>Work Experience</h3>
+                    {% for exp in experience %}
+                        <div class="item">
+                            <h4>{{ exp.post }} at {{ exp.company }}</h4>
+                            <p><span>{{ exp.duration }}</span></p>
+                            <p>{{ exp.description }}</p>
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+            
+            {% if projects %}
+                <section class="resume-section projects-section">
+                    <h3>Projects</h3>
+                    {% for proj in projects %}
+                        <div class="item">
+                            <h4>{{ proj.title }} - <span>{{ proj.duration }}</span></h4>
+                            <p>{{ proj.description }}</p>
+                        </div>
+                    {% endfor %}
+                </section>
+            {% endif %}
+            
+            {% if achievements %}
+                <section class="resume-section achievements-section">
+                    <h3>Achievements</h3>
+                    <ul class="achievements-list">
+                        {% for achieve in achievements %}
+                            <li>{{ achieve }}</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            {% endif %}
+        </main>
+    </div>
+    
+    <div class="print-button-container" style="text-align: center; margin: 20px auto;">
+        <button onclick="window.print()" style="padding: 12px 25px; background-color: #2ecc71; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1em;">Download as PDF</button>
+    </div>
+</body>
+</html>

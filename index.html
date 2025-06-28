@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <p>Fill out the form below to create your professional resume.</p>
+
+        <form id="resume-form" action="{% url 'generate_resume' %}" method="post">
+            {% csrf_token %}
+
+            <div class="section">
+                <h2>Personal Details</h2>
+                <div class="input-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="input-group textarea-group">
+                    <textarea name="about" rows="4" placeholder="Professional Summary (e.g., 'A motivated software engineer...')"></textarea>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="input-group">
+                    <input type="url" name="linkedin" placeholder="LinkedIn Profile URL">
+                </div>
+                <div class="input-group">
+                    <input type="url" name="github" placeholder="GitHub Profile URL">
+                </div>
+            </div>
+
+            <div class="section" id="education-section">
+                <h2>Education</h2>
+                <div id="education-container">
+                    <div class="edu-group">
+                        <h4>Education 1</h4>
+                        <div class="input-group">
+                            <input type="text" name="degree1" placeholder="Degree/Course (e.g., Bachelor of Technology)">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="college1" placeholder="University/College">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="year1" placeholder="Year (e.g., 2020-2024)">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addEducation()">Add More Education</button>
+            </div>
+
+            <div class="section" id="experience-section">
+                <h2>Work Experience</h2>
+                <div id="experience-container">
+                    <div class="exp-group">
+                        <h4>Experience 1</h4>
+                        <div class="input-group">
+                            <input type="text" name="company1" placeholder="Company Name">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="post1" placeholder="Your Post/Title">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="duration1" placeholder="Duration (e.g., Jun 2023 - Present)">
+                        </div>
+                        <div class="input-group textarea-group">
+                            <textarea name="lin1" rows="3" placeholder="Key Responsibilities and Achievements"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addExperience()">Add More Experience</button>
+            </div>
+
+            <div class="section" id="projects-section">
+                <h2>Projects</h2>
+                <div id="projects-container">
+                    <div class="proj-group">
+                        <h4>Project 1</h4>
+                        <div class="input-group">
+                            <input type="text" name="project1" placeholder="Project Title">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="durat1" placeholder="Duration">
+                        </div>
+                        <div class="input-group textarea-group">
+                            <textarea name="desc1" rows="3" placeholder="Project Description"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addProject()">Add More Project</button>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <div id="skills-container">
+                    <div class="input-group">
+                        <input type="text" name="skill1" placeholder="Skill 1">
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addSkill()">Add More Skill</button>
+            </div>
+
+            <div class="section">
+                <h2>Languages</h2>
+                <div id="languages-container">
+                    <div class="input-group">
+                        <input type="text" name="lang1" placeholder="Language 1">
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addLanguage()">Add More Language</button>
+            </div>
+
+            <div class="section">
+                <h2>Achievements</h2>
+                <div id="achievements-container">
+                    <div class="input-group">
+                        <input type="text" name="achieve1" placeholder="Achievement 1">
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addAchievement()">Add More Achievement</button>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Generate Resume</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
