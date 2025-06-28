@@ -95,3 +95,4 @@ Fill out the form on index.html
 
 Submit to generate your professional resume
 
+![resume project](https://github.com/user-attachments/assets/3c16829c-e190-4f2c-8b7b-c03dbbf25f1b)
