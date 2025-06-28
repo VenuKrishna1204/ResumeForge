@@ -23,35 +23,7 @@
 
 ## **🗂️ Project Structure**
 
-ResumeForge/
-│
-├── manage.py
-├── db.sqlite3
-│
-├── resume_forge/ 
-│ ├── init.py
-│ ├── settings.py
-│ ├── urls.py
-│ ├── wsgi.py
-│ └── asgi.py
-│
-├── generator/ 
-│ ├── migrations/
-│ ├── templates/
-│ │ └── generator/
-│ │ ├── index.html 
-│ │ └── resume_template.html 
-│ ├── static/
-│ │ └── generator/
-│ │ └── style.css , Style1.css
-│ ├── init.py
-│ ├── admin.py
-│ ├── apps.py
-│ ├── forms.py
-│ ├── models.py
-│ ├── urls.py
-│ └── views.py
-
+![Screenshot 2025-06-28 193304](https://github.com/user-attachments/assets/60ee25f5-6bad-4235-a33d-e91e730941c0)
 
 ---
 
