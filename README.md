@@ -27,7 +27,7 @@
 
 ---
 
-## **⚙️ Execution Steps (Folder-wise)**
+## **⚙️ Execution Steps **
 
 ### ✅ **1. Open your terminal or command prompt**
 
