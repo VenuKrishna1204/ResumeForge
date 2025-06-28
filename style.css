@@ -1,0 +1,253 @@
+/* resume/static/css/style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section {
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    background-color: #fcfdfe;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"],
+.input-group input[type="url"],
+.input-group textarea {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #c8d6e5;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-add, .form-actions button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-add {
+    background-color: #3498db;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.btn-add:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    background-color: #2ecc71;
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-actions button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.edu-group, .exp-group, .proj-group {
+    border-top: 1px solid #e1e8ed;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+.edu-group h4, .exp-group h4, .proj-group h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+/* Resume Template Styles (for direct view and print) */
+body.resume-page {
+    background-color: #fff;
+}
+.resume-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    background-color: #fff;
+}
+
+.sidebar {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px;
+    width: 30%;
+}
+
+.sidebar .section h3 {
+    color: #ecf0f1;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 8px;
+}
+
+.sidebar .contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.sidebar .contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+.sidebar .contact-info a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.main-content .resume-header {
+    margin-bottom: 30px;
+}
+
+.main-content .resume-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.main-content .resume-header p {
+    font-size: 1.1em;
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+.main-content .resume-section {
+    margin-bottom: 30px;
+}
+
+.main-content .resume-section h3 {
+    font-size: 1.5em;
+    color: #3498db;
+    border-bottom: 2px solid #e1e8ed;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.main-content .item {
+    margin-bottom: 20px;
+}
+
+.main-content .item h4 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #34495e;
+}
+
+.main-content .item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.main-content .item span {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.skills-list, .achievements-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+/* Print Styles */
+@media print {
+    .print-button-container {
+        display: none;
+    }
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .resume-container {
+        width: 210mm; 
+        min-height: 297mm; 
+        margin: auto;
+        box-shadow: none; 
+    }
+   
+    h1 { font-size: 2em; }
+    h3 { font-size: 1.2em; }
+    p, li, span { font-size: 0.9em; }
+}
